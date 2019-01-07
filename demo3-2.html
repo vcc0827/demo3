@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问卷调查</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    html {
+        font-size: 62.5%;
+        font-family: "Microsoft YaHei UI Light", serif;
+    }
+
+    a {
+        text-decoration: none;
+        display: block;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .bar {
+        width: 100%;
+        height: 8.5rem;
+        background: #ed6d00;
+    }
+
+    .icons {
+        float: left;
+        width: 11.5%;
+        position: relative;
+        top: 25%;
+        left: 4%;
+    }
+
+    img {
+        display: block;
+        width: 4.5rem;
+    }
+
+    .title {
+        font-size: 5.25rem;
+        color: #ffffff;
+        text-align: center;
+        float: left;
+        width: 77%;
+        height: 8.5rem;
+        line-height: 8.5rem;
+    }
+
+    .menu {
+        float: right;
+        width: 11.5%;
+        position: relative;
+        top: 15%;
+    }
+    form{
+        margin-left: 2rem;
+    }
+    form p {
+        font-size: 4rem;
+        display: inline;
+        margin-left: 3rem;
+        color: #999999;
+    }
+
+    form h2 {
+        font-size: 4.5rem;
+        font-weight: lighter;
+        margin-top: 8rem;
+        margin-bottom: 3rem;
+        margin-left: 3rem;
+    }
+
+    form label {
+        float: left;
+        margin-left: 3rem;
+        margin-right: 7rem;
+        margin-bottom: 2rem;
+    }
+
+    input {
+        zoom: 2.6;
+    }
+
+    input[type='checkbox'] {
+        width: 3rem;
+        height: 3rem;
+        background: #ffffff;
+        -webkit-appearance: none;
+        border: 1px solid #c9c9c9;
+        border-radius: 2px;
+        outline: none;
+    }
+
+    label input[type=checkbox]:checked {
+        background: url("image/checked.png") no-repeat center;
+        background-size: cover;
+
+    }
+
+    .next-button {
+        text-align: center;
+        margin-top:23rem;
+    }
+
+    .next {
+        width: 94%;
+        height: 8.5rem;
+        background: #ed6d00;
+        border: 0;
+        color: #ffffff;
+        border-radius: .5rem;
+        font-size: 4rem;
+    }
+</style>
+<body>
+<div class="bar">
+    <div class="icons"><a href=""><img src="image/icon.png" alt=""></a></div>
+    <div class="menu"><a href=""><img src="#" alt=""></a></div>
+    <div class="title">问卷调查</div>
+</div>
+
+<form action="">
+    <h2>1、您感兴趣的产品（多选)</h2>
+    <label>
+        <input type="checkbox"  class="checkboxes"><span></span>
+        <p>奶制品</p>
+    </label>
+    <label>
+        <input type="checkbox" checked  class="checkboxes">
+        <p>肉制品</p>
+    </label>
+    <label>
+        <input type="checkbox" class="checkboxes">
+        <p>调味品</p><br>
+    </label>
+    <label>
+        <input type="checkbox" class="checkboxes">
+        <p>品牌创意与包装</p>
+    </label>
+    <label>
+        <input type="checkbox" class="checkboxes">
+        <p>冷冻食品</p>
+    </label>
+    <div class="clear"></div>
+    <h2>2、您参观的目的（多选)</h2>
+    <label>
+        <input type="checkbox"><span></span>
+        <p>奶制品</p>
+    </label>
+    <label>
+        <input type="checkbox" checked>
+        <p>肉制品</p>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>调味品</p><br>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>品牌创意与包装</p>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>冷冻食品</p>
+    </label>
+    <div class="clear"></div>
+    <h2>3、您关于采购的决定权（多选)</h2>
+    <label>
+        <input type="checkbox"><span></span>
+        <p>奶制品</p>
+    </label>
+    <label>
+        <input type="checkbox" checked>
+        <p>肉制品</p>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>调味品</p><br>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>品牌创意与包装</p>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>冷冻食品</p>
+    </label>
+    <div class="clear"></div>
+    <h2>4、您如何得知本届展会（多选)</h2>
+    <label>
+        <input type="checkbox"><span></span>
+        <p>奶制品</p>
+    </label>
+    <label>
+        <input type="checkbox" checked>
+        <p>肉制品</p>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>调味品</p><br>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>品牌创意与包装</p>
+    </label>
+    <label>
+        <input type="checkbox">
+        <p>冷冻食品</p>
+    </label>
+
+</form>
+<div class="next-button">
+    <button type="submit" class="next" onclick="checkIt()">下一步</button>
+</div>
+<script>
+    function checkIt(){
+        console.log("被点击");
+        var names = document.getElementsByClassName(".checkboxes");
+        console.log(names);
+        var flag = false;
+        for(var i=0;i<names.length;i++){
+            if(names[i].checked){
+                flag=true;
+                break;
+            }
+            if(!flag){
+                console.log("请最少选择一项！");
+                return false;
+            }
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+/*移动端默认字体大小16px*/
+*{
+    margin: 0;
+    padding: 0;
+    font-size:16px;
+}
+.header{
+    background-color: #ed6d00;
+}
+.icon{
+    background: url("#");
+}
+.title{
+    font-size: 2.3125em;
+    color: #ffffff;
+    font-family: "Microsoft YaHei UI", serif;
+}
+.menu{
+    background: url("#");
+}
+.field{
+    border-radius: 5px;
+}
