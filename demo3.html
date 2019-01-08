@@ -1,35 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>观众预登记</title>
     <link rel="stylesheet" href="demo3.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 
 <body>
-<div class="icons"><a href=""><img src="image/icon.png" alt=""></a></div>
-<div class="menu"><a href=""><img src="image/menu.png" alt=""></a></div>
-<div class="title">观众预登记</div>
+<div class="register-all">
+    <!--头部-->
+    <div class="bar">
+        <div class="icons"><a href=""><img src="image/icon.png" alt=""></a></div>
+        <div class="title">观众预登记</div>
+    </div>
+    <!--内容-->
+    <div class="register-content">
+        <div class="reg-title">
+            <div class="reg-title-content">请在此提交您的申请信息</div>
+        </div>
+        <div class="reg-form">
+            <form action="">
+                <div class="emails required">
+                    <label for="email">
+                        <input type="email" id="email" placeholder="邮箱（必填）" onblur="isNull();postComment()" >
+                    </label>
+                </div>
+                <div class="reg-pass-set">
+                    <label for="password-set">
+                        <input type="password" id="password-set" placeholder="设置登录密码" >
+                    </label>
+                </div>
+                <div class="reg-pass-confirm">
+                    <label for="password-confirm">
+                        <input type="password" id="password-confirm" placeholder="确认登录密码" onchange="check()">
+                    </label>
+                </div>
+                <div class="reg-line"></div>
+                <div class="reg-down top-4rem">
+                    <label for="real-name">
+                        <input type="text" id="real-name" placeholder="真实姓名（必填）" class="required" onblur="isNull()">
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="phone">
+                        <input type="tel" id="phone" placeholder="手机号码（必填）" class="required" onblur="isNull()">
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="sex">
+                        <div class="selector">
+                            <select name="sex" id="sex">
+                                <option value="">性别</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="position">
+                        <input type="text" id="position" placeholder="职位（必填）" class="required">
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="department">
+                        <input type="text" id="department" placeholder="部门（必填）" class="required">
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="company">
+                        <input type="text" id="company" placeholder="公司全称（必填）">
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="company-en">
+                        <input type="text" id="company-en" placeholder="公司全称（英文）">
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="company-address">
+                        <input type="text" id="company-address" placeholder="公司地址（必填）">
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="country">
+                        <div class="selector">
+                            <select name="country" id="country">
+                                <option value="">国家</option>
+                                <option value="">魏</option>
+                                <option value="">蜀</option>
+                                <option value="">吴</option>
+                            </select>
+                        </div>
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="city">
+                        <div class="selector">
+                            <select name="city" id="city">
+                                <option value="">234</option>
+                                <option value="">234</option>
+                                <option value="">234</option>
+                                <option value="">234</option>
+                                <option value="">234</option>
+                                <option value="">234</option>
+                                <option value="">234</option>
+                            </select>
+                        </div>
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="postcodes">
+                        <input type="text" id="postcodes" placeholder="邮编">
+                    </label>
+                </div>
+                <div class="reg-down">
+                    <label for="office-tel">
+                        <input type="text" id="office-tel" placeholder="办公室电话（必填）">
+                    </label>
+                </div>
+            </form>
+            <script>
+                // 判断邮箱是否为空
+                function isNull() {
+                   var _email = document.getElementById('email').value;
+                   var str = _email.replace(/(^\s*)|(\s*$)/g, '');
+                   if (str === '' || str === undefined || str == null){
+                       console.log('空')
+                   } else{
+                       console.log('非空，可进行后续判断')
+                   }
+                }
+         $('form :input').blur(function () {
+             var $parent = $(this).parent();
+             $parent.find(".formtips").remove();
+             if($(this).is('#email')){
+                 if(this.value === "" || (this.value!=="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value)) ){
+                     var errorMsg = '请输入正确的E-Mail地址.';
+                     $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
+                 }else{
+                     var okMsg = '输入正确.';
+                     $parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
+                 }
+             }
+         }).keyup(function () {
+             $(this).triggerHandler("blur");
+         }).focus(function () {
+             $(this).triggerHandler("blur");
+         });
 
-<h2>请在此提交您的申请信息</h2>
-<form action="">
-    <div class="field"><input type="email" placeholder="邮箱（必填）" name="" value=""></div>
-    <div class="tips"></div>
-    <div class="field"><input type="password" name="password-set" placeholder="设置登录密码"></div>
-    <div class="field"><input type="password" name="password-confirm" placeholder="确认登录密码"></div>
-    <div class="line"></div>
-    <div class="field"><input type="text" name="realname" placeholder="真实姓名（必填）"></div>
-    <div class="field"><input type="text" name="realname" placeholder="手机号码（必填）"></div>
-    <div class="field"><input type="text" name="realname" placeholder="性别"></div>
-    <div class="field"><input type="text" name="realname" placeholder="职位（必填）"></div>
-    <div class="field"><input type="text" name="realname" placeholder="部门（必填）"></div>
-    <div class="field"><input type="text" name="realname" placeholder="公司全称（必填）"></div>
-    <div class="field"><input type="text" name="realname" placeholder="公司全称（英文）"></div>
-    <div class="field"><input type="text" name="realname" placeholder="公司地址（必填）"></div>
-    <!--国家省市二级直连-->
-    <div class="field"><input type="text" name="realname" placeholder="邮编"></div>
-    <div class="field"><input type="text" name="realname" placeholder="办公室电话（必填）"></div>
-    <button type="submit">下一步</button>
-</form>
+            </script>
+        </div>
+        <div class="next-button">
+            <button type="submit" class="next">下一步</button>
+        </div>
+    </div>
+
+</div>
+
+
 </body>
 </html>

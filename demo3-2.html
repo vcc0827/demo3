@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
     <title>问卷调查</title>
@@ -16,6 +16,14 @@
     html {
         font-size: 62.5%;
         font-family: "Microsoft YaHei UI Light", serif;
+    }
+
+    body {
+        width: 100%;
+    }
+
+    .all {
+        width: 100%;
     }
 
     a {
@@ -62,9 +70,7 @@
         position: relative;
         top: 15%;
     }
-    form{
-        margin-left: 2rem;
-    }
+
     form p {
         font-size: 4rem;
         display: inline;
@@ -109,7 +115,7 @@
 
     .next-button {
         text-align: center;
-        margin-top:23rem;
+        margin-top: 23rem;
     }
 
     .next {
@@ -123,123 +129,144 @@
     }
 </style>
 <body>
-<div class="bar">
-    <div class="icons"><a href=""><img src="image/icon.png" alt=""></a></div>
-    <div class="menu"><a href=""><img src="#" alt=""></a></div>
-    <div class="title">问卷调查</div>
+<div class="all">
+    <!--header-->
+    <div class="bar">
+        <div class="icons"><a href=""><img src="image/icon.png" alt=""></a></div>
+        <div class="menu"><a href=""><img src="#" alt=""></a></div>
+        <div class="title">问卷调查</div>
+    </div>
+    <!--content-->
+    <div>
+        <form action="">
+            <div class="exam-container">
+                <div class="exam-form">
+                    <div>
+                        <h2>1、您感兴趣的产品（多选)</h2>
+                    </div>
+                    <div>
+                        <label for="milk">
+                            <input type="checkbox" class="checkboxes" id="milk"><span></span>
+                            <p>奶制品</p>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="meat">
+                            <input type="checkbox" checked class="checkboxes" id="meat">
+                            <p>肉制品</p>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="condiment">
+                            <input type="checkbox" class="checkboxes" id="condiment">
+                            <p>调味品</p><br>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="brand">
+                            <input type="checkbox" class="checkboxes" id="brand">
+                            <p>品牌创意与包装</p>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="freeze">
+                            <input type="checkbox" class="checkboxes" id="freeze">
+                            <p>冷冻食品</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <h2>2、您参观的目的（多选)</h2>
+                <label>
+                    <input type="checkbox"><span></span>
+                    <p>奶制品</p>
+                </label>
+                <label>
+                    <input type="checkbox" checked>
+                    <p>肉制品</p>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>调味品</p><br>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>品牌创意与包装</p>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>冷冻食品</p>
+                </label>
+                <div class="clear"></div>
+                <h2>3、您关于采购的决定权（多选)</h2>
+                <label>
+                    <input type="checkbox"><span></span>
+                    <p>奶制品</p>
+                </label>
+                <label>
+                    <input type="checkbox" checked>
+                    <p>肉制品</p>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>调味品</p><br>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>品牌创意与包装</p>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>冷冻食品</p>
+                </label>
+                <div class="clear"></div>
+                <h2>4、您如何得知本届展会（多选)</h2>
+                <label>
+                    <input type="checkbox"><span></span>
+                    <p>奶制品</p>
+                </label>
+                <label>
+                    <input type="checkbox" checked>
+                    <p>肉制品</p>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>调味品</p><br>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>品牌创意与包装</p>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <p>冷冻食品</p>
+                </label>
+            </div>
+        </form>
+        <div class="next-button">
+            <button type="submit" class="next" onclick="checkIt()">下一步</button>
+        </div>
+    </div>
 </div>
 
-<form action="">
-    <h2>1、您感兴趣的产品（多选)</h2>
-    <label>
-        <input type="checkbox"  class="checkboxes"><span></span>
-        <p>奶制品</p>
-    </label>
-    <label>
-        <input type="checkbox" checked  class="checkboxes">
-        <p>肉制品</p>
-    </label>
-    <label>
-        <input type="checkbox" class="checkboxes">
-        <p>调味品</p><br>
-    </label>
-    <label>
-        <input type="checkbox" class="checkboxes">
-        <p>品牌创意与包装</p>
-    </label>
-    <label>
-        <input type="checkbox" class="checkboxes">
-        <p>冷冻食品</p>
-    </label>
-    <div class="clear"></div>
-    <h2>2、您参观的目的（多选)</h2>
-    <label>
-        <input type="checkbox"><span></span>
-        <p>奶制品</p>
-    </label>
-    <label>
-        <input type="checkbox" checked>
-        <p>肉制品</p>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>调味品</p><br>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>品牌创意与包装</p>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>冷冻食品</p>
-    </label>
-    <div class="clear"></div>
-    <h2>3、您关于采购的决定权（多选)</h2>
-    <label>
-        <input type="checkbox"><span></span>
-        <p>奶制品</p>
-    </label>
-    <label>
-        <input type="checkbox" checked>
-        <p>肉制品</p>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>调味品</p><br>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>品牌创意与包装</p>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>冷冻食品</p>
-    </label>
-    <div class="clear"></div>
-    <h2>4、您如何得知本届展会（多选)</h2>
-    <label>
-        <input type="checkbox"><span></span>
-        <p>奶制品</p>
-    </label>
-    <label>
-        <input type="checkbox" checked>
-        <p>肉制品</p>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>调味品</p><br>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>品牌创意与包装</p>
-    </label>
-    <label>
-        <input type="checkbox">
-        <p>冷冻食品</p>
-    </label>
 
-</form>
-<div class="next-button">
-    <button type="submit" class="next" onclick="checkIt()">下一步</button>
-</div>
 <script>
-    function checkIt(){
+    function checkIt() {
         console.log("被点击");
         var names = document.getElementsByClassName(".checkboxes");
         console.log(names);
         var flag = false;
-        for(var i=0;i<names.length;i++){
-            if(names[i].checked){
-                flag=true;
+        for (var i = 0; i < names.length; i++) {
+            if (names[i].checked) {
+                flag = true;
                 break;
             }
-            if(!flag){
+            if (!flag) {
                 console.log("请最少选择一项！");
                 return false;
             }
         }
     }
-
 
 
 </script>
