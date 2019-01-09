@@ -21,10 +21,10 @@
             <div class="reg-title-content">请在此提交您的申请信息</div>
         </div>
         <div class="reg-form">
-            <form action="">
+            <form action="" onsubmit="isOk()" id="form1">
                 <div class="emails required">
                     <label for="email">
-                        <input type="email" id="email" placeholder="邮箱（必填）" onblur="isNull();postComment()" >
+                        <input type="email" id="email" class="email" placeholder="邮箱（必填）"  onchange="emailCheck()">
                     </label>
                 </div>
                 <div class="reg-pass-set">
@@ -34,27 +34,27 @@
                 </div>
                 <div class="reg-pass-confirm">
                     <label for="password-confirm">
-                        <input type="password" id="password-confirm" placeholder="确认登录密码" onchange="check()">
+                        <input type="password" id="password-confirm" placeholder="确认登录密码" onchange="pwdCheck(value)">
                     </label>
                 </div>
                 <div class="reg-line"></div>
                 <div class="reg-down top-4rem">
                     <label for="real-name">
-                        <input type="text" id="real-name" placeholder="真实姓名（必填）" class="required" onblur="isNull()">
+                        <input type="text" id="real-name" placeholder="真实姓名（必填）" class="required">
                     </label>
                 </div>
                 <div class="reg-down">
                     <label for="phone">
-                        <input type="tel" id="phone" placeholder="手机号码（必填）" class="required" onblur="isNull()">
+                        <input type="tel" id="phone" class="required" placeholder="手机号码（必填）" onchange="telCheck()">
                     </label>
                 </div>
                 <div class="reg-down">
                     <label for="sex">
                         <div class="selector">
                             <select name="sex" id="sex">
-                                <option value="">性别</option>
-                                <option value="男">男</option>
-                                <option value="女">女</option>
+                                <option value="" hidden>性别</option>
+                                <option value="">男</option>
+                                <option value="">女</option>
                             </select>
                         </div>
                     </label>
@@ -66,12 +66,13 @@
                 </div>
                 <div class="reg-down">
                     <label for="department">
-                        <input type="text" id="department" placeholder="部门（必填）" class="required">
+                        <input type="text" id="department" placeholder="部门（必填）" onblur="leaveCheck()"
+                               class="required">
                     </label>
                 </div>
                 <div class="reg-down">
                     <label for="company">
-                        <input type="text" id="company" placeholder="公司全称（必填）">
+                        <input type="text" id="company" placeholder="公司全称（必填）" >
                     </label>
                 </div>
                 <div class="reg-down">
@@ -88,10 +89,10 @@
                     <label for="country">
                         <div class="selector">
                             <select name="country" id="country">
-                                <option value="">国家</option>
-                                <option value="">魏</option>
-                                <option value="">蜀</option>
-                                <option value="">吴</option>
+                                <option value="" hidden>国家</option>
+                                <option value="">中国</option>
+                                <option value="">中国</option>
+                                <option value="">中国</option>
                             </select>
                         </div>
                     </label>
@@ -100,13 +101,13 @@
                     <label for="city">
                         <div class="selector">
                             <select name="city" id="city">
-                                <option value="">234</option>
-                                <option value="">234</option>
-                                <option value="">234</option>
-                                <option value="">234</option>
-                                <option value="">234</option>
-                                <option value="">234</option>
-                                <option value="">234</option>
+                                <option value="" hidden>城市</option>
+                                <option value="">城市名</option>
+                                <option value="">城市名</option>
+                                <option value="">城市名</option>
+                                <option value="">城市名</option>
+                                <option value="">城市名</option>
+                                <option value="">城市名</option>
                             </select>
                         </div>
                     </label>
@@ -118,48 +119,127 @@
                 </div>
                 <div class="reg-down">
                     <label for="office-tel">
-                        <input type="text" id="office-tel" placeholder="办公室电话（必填）">
+                        <input type="text" id="office-tel" placeholder="办公室电话（必填）" >
                     </label>
                 </div>
             </form>
-            <script>
-                // 判断邮箱是否为空
-                function isNull() {
-                   var _email = document.getElementById('email').value;
-                   var str = _email.replace(/(^\s*)|(\s*$)/g, '');
-                   if (str === '' || str === undefined || str == null){
-                       console.log('空')
-                   } else{
-                       console.log('非空，可进行后续判断')
-                   }
-                }
-         $('form :input').blur(function () {
-             var $parent = $(this).parent();
-             $parent.find(".formtips").remove();
-             if($(this).is('#email')){
-                 if(this.value === "" || (this.value!=="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value)) ){
-                     var errorMsg = '请输入正确的E-Mail地址.';
-                     $parent.append('<span class="formtips onError">'+errorMsg+'</span>');
-                 }else{
-                     var okMsg = '输入正确.';
-                     $parent.append('<span class="formtips onSuccess">'+okMsg+'</span>');
-                 }
-             }
-         }).keyup(function () {
-             $(this).triggerHandler("blur");
-         }).focus(function () {
-             $(this).triggerHandler("blur");
-         });
-
-            </script>
         </div>
         <div class="next-button">
-            <button type="submit" class="next">下一步</button>
+            <button type="submit" class="next" onclick="leaveCheck()">下一步</button>
         </div>
     </div>
 
 </div>
+<script>
+    //必填项确认是否为空
+    function leaveCheck() {
+        if (document.getElementById('email').value === '') {
+            console.log("不能为空！");
+            document.getElementById('email').style.border = "2px red solid"
+        } else {
+            document.getElementById('email').style.border = "2px green solid"
+        }
 
+        if (document.getElementById('real-name').value === '') {
+            console.log("不能为空！");
+            document.getElementById('real-name').style.border = "2px red solid"
+        } else {
+            document.getElementById('real-name').style.border = "2px green solid"
+        }
 
+        if (document.getElementById('phone').value === '') {
+            console.log("不能为空！");
+            document.getElementById('phone').style.border = "2px red solid"
+        } else {
+            document.getElementById('phone').style.border = "2px green solid"
+        }
+
+        if (document.getElementById('phone').value === '') {
+            console.log("不能为空！");
+            document.getElementById('phone').style.border = "2px red solid"
+        } else {
+            document.getElementById('phone').style.border = "2px green solid"
+        }
+
+        if (document.getElementById('position').value === '') {
+            console.log("不能为空！");
+            document.getElementById('position').style.border = "2px red solid"
+        } else {
+            document.getElementById('position').style.border = "2px green solid"
+        }
+
+        if (document.getElementById('department').value === '') {
+            console.log("不能为空！");
+            document.getElementById('department').style.border = "2px red solid"
+        } else {
+            document.getElementById('department').style.border = "2px green solid"
+        }
+
+        if (document.getElementById('company').value === '') {
+            console.log("不能为空！");
+            document.getElementById('company').style.border = "2px red solid"
+        } else {
+            document.getElementById('company').style.border = "2px green solid"
+        }
+
+        if (document.getElementById('company-address').value === '') {
+            console.log("不能为空！");
+            document.getElementById('company-address').style.border = "2px red solid"
+        } else {
+            document.getElementById('company-address').style.border = "2px green solid"
+        }
+
+        if (document.getElementById('office-tel').value === '') {
+            console.log("不能为空！");
+            document.getElementById('office-tel').style.border = "2px red solid"
+        } else {
+            document.getElementById('office-tel').style.border = "2px green solid"
+        }
+    }
+    //邮箱校验
+  function emailCheck() {
+      var reg = new RegExp("^[a-z0-9]+([._\\\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+      var _email = document.getElementById("email").value;
+      console.log(_email)
+      if(reg.test(_email)){
+          console.log("邮箱正确！");
+          document.getElementById('email').style.border = "1px green solid"
+      }else{
+          document.getElementById('email').style.border = "1px red solid";
+          console.log(" 邮箱错误！");
+
+      }
+  }
+    // 二次密码校验
+    function pwdCheck() {
+        var value1 = document.getElementById("password-set").value;
+        var value2 = document.getElementById("password-confirm").value;
+        if (value1 === value2) {
+            console.log("两次相同！");
+            document.getElementById('password-confirm').style.border = "1px green solid"
+            document.getElementById('password-set').style.border = "1px green solid"
+        } else {
+            console.log("两次不同!");
+            document.getElementById('password-confirm').style.border = "1px red solid"
+            document.getElementById('password-set').style.border = "1px red solid"
+        }
+    }
+    //手机号验证
+    function telCheck() {
+        var phoneReg = /^1[3-5789]\d{9}$/;
+        var _tel = document.getElementById("phone").value;
+        console.log(_tel);
+        if(phoneReg.test(_tel)){
+            console.log("手机号正确！");
+            document.getElementById('phone').style.border = "1px green solid"
+        }else{
+            document.getElementById('phone').style.border = "1px red solid";
+            console.log(" 手机号错误！");
+        }
+    }
+
+    //模拟下拉菜单
+
+</script>
 </body>
 </html>
