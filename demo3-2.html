@@ -4,57 +4,9 @@
     <meta charset="UTF-8">
     <title>问卷调查</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="demo3.css">
+    <link rel="stylesheet" href="dist/demo.css">
+    <script src="dist/demo.js"></script>
 </head>
-<style>
-    a {
-        text-decoration: none;
-        display: block;
-    }
-
-    form p {
-        font-size: 4rem;
-        display: inline;
-        margin-left: 3rem;
-        color: #999999;
-    }
-
-    form h2 {
-        font-size: 4.5rem;
-        font-weight: lighter;
-        margin-top: 8rem;
-        margin-bottom: 3rem;
-        margin-left: 3rem;
-    }
-
-    form label {
-        float: left;
-        margin-left: 3rem;
-        margin-right: 7rem;
-        margin-bottom: 2rem;
-    }
-
-    input {
-        zoom: 2.6;
-    }
-
-    input[type='checkbox'] {
-        width: 3rem;
-        height: 3rem;
-        background: #ffffff;
-        -webkit-appearance: none;
-        border: 1px solid #c9c9c9;
-        border-radius: 2px;
-        outline: none;
-    }
-
-    label input[type=checkbox]:checked {
-        background: url("image/checked.png") no-repeat center;
-        background-size: cover;
-
-    }
-
-</style>
 <body>
 <div class="exam-all">
     <!--头部-->
@@ -68,144 +20,150 @@
         <form action="">
             <div class="exam-form">
                 <div class="question">
-                    <div class="q-title">1、您感兴趣的产品（多选)</div>
-                    <div class="q-tip">该问题还没有选择</div>
+                    <div class="q-title">
+                        <p class="q-title-content">1、您感兴趣的产品（多选)</p>
+                        <p class="q-title-tip">该问题还没有选择</p>
+                    </div>
                     <div class="q-content">
-                        <div class="milk1">
-                            <label for="milk1">
-                                <input type="checkbox" id="milk1"><span></span>
-                                <p>奶制品</p>
-                            </label>
+                        <div class="milk">
+                                <input type="checkbox"  id="milk1">
+                            <label for="milk1"> <p>奶制品</p></label>
                         </div>
-                        <div class="meat1">
+                        <div class="meat">
+                                <input type="checkbox" checked id="meat1" >
                             <label for="meat1">
-                                <input type="checkbox" checked id="meat1"><span></span>
                                 <p>肉制品</p>
                             </label>
                         </div>
-                        <div class="condiment1">
+                        <div class="condiment">
+                                <input type="checkbox" id="condiment1">
                             <label for="condiment1">
-                                <input type="checkbox" id="condiment1"><span></span>
                                 <p>调味品</p>
                             </label>
                         </div>
-                        <div class="brand1">
+                        <div class="brand">
+                                <input type="checkbox" id="brand1">
                             <label for="brand1">
-                                <input type="checkbox" id="brand1"><span></span>
                                 <p>品牌创意与包装</p>
                             </label>
                         </div>
-                        <div class="freeze1">
+                        <div class="freeze">
+                                <input type="checkbox" id="freeze1">
                             <label for="freeze1">
-                                <input type="checkbox" id="freeze1"><span></span>
                                 <p>冷冻食品</p>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="question">
-                    <div class="q-title">2、您参观的目的（多选)</div>
-                    <div class="q-tip">该问题还没有选择</div>
+                    <div class="q-title">
+                        <p class="q-title-content">2、您参观的目的（多选)</p>
+                        <p class="q-title-tip">该问题还没有选择</p>
+                    </div>
                     <div class="q-content">
-                        <div class="milk2">
+                        <div class="milk">
+                                <input type="checkbox" id="milk2">
                             <label for="milk2">
-                                <input type="checkbox" id="milk2"><span></span>
                                 <p>奶制品</p>
                             </label>
                         </div>
-                        <div class="meat2">
+                        <div class="meat">
+                                <input type="checkbox" checked  id="meat2">
                             <label for="meat2">
-                                <input type="checkbox" checked  id="meat2"><span></span>
                                 <p>肉制品</p>
                             </label>
                         </div>
-                        <div class="condiment2">
+                        <div class="condiment">
+                                <input type="checkbox" id="condiment2">
                             <label for="condiment2">
-                                <input type="checkbox" id="condiment2"><span></span>
                                 <p>调味品</p>
                             </label>
                         </div>
-                        <div class="brand2">
+                        <div class="brand">
+                                <input type="checkbox" id="brand2">
                             <label for="brand2">
-                                <input type="checkbox" id="brand2"><span></span>
                                 <p>品牌创意与包装</p>
                             </label>
                         </div>
-                        <div class="freeze2">
+                        <div class="freeze">
+                                <input type="checkbox" id="freeze2">
                             <label for="freeze2">
-                                <input type="checkbox" id="freeze2"><span></span>
                                 <p>冷冻食品</p>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="question">
-                    <div class="q-title">3、您关于采购的决定权（多选)</div>
-                    <div class="q-tip">该问题还没有选择</div>
+                    <div class="q-title">
+                        <p class="q-title-content">3、您关于采购的决定权（多选)</p>
+                        <p class="q-title-tip">该问题还没有选择</p>
+                    </div>
                     <div class="q-content">
-                        <div class="milk3">
+                        <div class="milk">
+                                <input type="checkbox" id="milk3">
                             <label for="milk3">
-                                <input type="checkbox" id="milk3"><span></span>
                                 <p>奶制品</p>
                             </label>
                         </div>
-                        <div class="meat3">
+                        <div class="meat">
+                                <input type="checkbox" checked  id="meat3">
                             <label for="meat3">
-                                <input type="checkbox" checked  id="meat3"><span></span>
                                 <p>肉制品</p>
                             </label>
                         </div>
-                        <div class="condiment3">
+                        <div class="condiment">
+                                <input type="checkbox" id="condiment3">
                             <label for="condiment3">
-                                <input type="checkbox" id="condiment3"><span></span>
                                 <p>调味品</p>
                             </label>
                         </div>
-                        <div class="brand3">
+                        <div class="brand">
+                                <input type="checkbox" id="brand3">
                             <label for="brand3">
-                                <input type="checkbox" id="brand3"><span></span>
                                 <p>品牌创意与包装</p>
                             </label>
                         </div>
-                        <div class="freeze3">
+                        <div class="freeze">
+                                <input type="checkbox" id="freeze3">
                             <label for="freeze3">
-                                <input type="checkbox" id="freeze3"><span></span>
                                 <p>冷冻食品</p>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="question">
-                    <div class="q-title">4、您如何得知本届展会（多选)</div>
-                    <div class="q-tip">该问题还没有选择</div>
+                    <div class="q-title">
+                        <p class="q-title-content">4、您如何得知本届展会（多选)</p>
+                        <p class="q-title-tip">该问题还没有选择</p>
+                    </div>
                     <div class="q-content">
-                        <div class="milk4">
+                        <div class="milk">
+                                <input type="checkbox" id="milk4">
                             <label for="milk4">
-                                <input type="checkbox" id="milk4"><span></span>
                                 <p>奶制品</p>
                             </label>
                         </div>
-                        <div class="meat4">
+                        <div class="meat">
+                                <input type="checkbox" checked  id="meat4">
                             <label for="meat4">
-                                <input type="checkbox" checked  id="meat4"><span></span>
                                 <p>肉制品</p>
                             </label>
                         </div>
-                        <div class="condiment4">
+                        <div class="condiment">
+                                <input type="checkbox" id="condiment4">
                             <label for="condiment4">
-                                <input type="checkbox" id="condiment4"><span></span>
                                 <p>调味品</p>
                             </label>
                         </div>
-                        <div class="brand4">
+                        <div class="brand">
+                                <input type="checkbox" id="brand4">
                             <label for="brand4">
-                                <input type="checkbox" id="brand4"><span></span>
                                 <p>品牌创意与包装</p>
                             </label>
                         </div>
-                        <div class="freeze4">
+                        <div class="freeze">
+                                <input type="checkbox" id="freeze4">
                             <label for="freeze4">
-                                <input type="checkbox" id="freeze4"><span></span>
                                 <p>冷冻食品</p>
                             </label>
                         </div>
@@ -213,8 +171,8 @@
                 </div>
             </div>
         </form>
-        <div class="next-button">
-            <button type="submit" class="next" onclick="checkIt()">下一步</button>
+        <div class="next-button" >
+            <button type="submit" class="next" onclick="listCheck();">下一步</button>
         </div>
     </div>
 
@@ -236,6 +194,10 @@
                 return false;
             }
         }
+    }
+
+    function listCheck() {
+
     }
 
 

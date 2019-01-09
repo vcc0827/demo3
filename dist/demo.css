@@ -1,0 +1,121 @@
+/*移动端默认字体大小16px*/
+/*样式重置*/
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size:20px;
+}
+body {
+    width: 100%;
+    font-family: "Microsoft YaHei UI Light", serif;
+    font-size:14px;
+    margin:0 auto;
+    background: #fff;
+}
+a {
+    text-decoration: none;
+    display: block;
+}
+select{
+    border: solid 1px #999999;
+    outline:none;
+    width:100%;
+    font-size:2rem;
+    color: #999999;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("../image/arrow.png") no-repeat  scroll right center transparent;
+    background-size: 5rem;
+}
+input{
+    outline:none;
+    box-shadow:none;
+}
+/*公用样式*/
+.clear {
+    clear: both;
+}
+.bar {
+    width: 100%;
+    height: 5.5rem;
+    background: #ed6d00;
+}
+.icons {
+    float: left;
+    width: 12.5%;
+    position: relative;
+    top: 28%;
+    left: 6%;
+}
+.icons img {
+    display: block;
+    width: 2.5rem;
+}
+.title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    float: left;
+    width: 76%;
+    line-height: 5.5rem;
+}
+.menu{
+    float: right;
+    width: 11.5%;
+    position: relative;
+    top: 15%;
+}
+.dis-no{display:none;}
+.next-button{text-align: center; padding-top:1rem;}
+.next{width: 94%;height: 5.5rem;background: #ed6d00;border: 0;color: #ffffff;border-radius: .5rem;font-size: 2.5rem;}
+#form1 input, #form1 select{ width: 41rem;height: 4rem;border:1px solid #333333;border-radius: .5rem;margin-bottom: 2rem;font-size: 2rem;padding-left: 2rem;}
+#form1 input:focus{border:1px solid #305ebc;}
+#form1 select{ width: 43rem;}
+#form1 select option{ font-size:0.8rem;}
+/*观众预登记页面*/
+.reg-title{padding:2.7rem 3rem 2.7rem 3rem;}
+.reg-title-content{font-size:2rem;color: #333333;font-weight: bold;}
+.reg-form{padding:0 3rem 0 3rem;}
+.email,#form1 input{color:#333333;}
+select::-ms-expand { display: none; }
+.reg-line{width:114%;height:1.2rem;background:#f4f4f4;position: relative;left: -3rem;margin-bottom:1rem;}
+
+
+
+/*问卷调查页面*/
+.exam-all{width:100%;}
+.exam-container{}
+.exam-form{ padding:4rem 3rem 0 3rem;}
+.question{}
+.q-title{overflow:hidden;padding-bottom: 2rem;}
+.q-title-content{font-size:2rem;float:left;}
+.q-title-tip{display:none; font-size:1.5rem;color:red;float:right;position:relative;top:0.6rem;}
+.q-content{overflow: hidden; font-size:1.75rem; margin-bottom:4rem;}
+.q-content div{float:left;}
+.q-content label{float:right; padding-left:1rem;}
+.q-content input {zoom: 2.6;}
+.q-content input[type='checkbox'] {width: 2rem;height: 2rem;background: #ffffff;-webkit-appearance: none;border: 1px solid #c9c9c9;border-radius: 2px;outline: none;}
+.q-content div input[type=checkbox]:checked{background: url("../image/checked.png") no-repeat center; background-size: cover;}
+.milk{margin-right:9rem;}
+.meat{margin-right:9rem; margin-bottom:1.2rem;}
+.brand{margin-right:8rem;}
+
+
+
+/*331 228*/
+/*同期活动页面*/
+.events-all{width:100%;}
+.exam-container{}
+.events-boxes{}
+.events-pic{width: 20rem;height: 16.4rem;background: #00000d0d;margin-left: 3rem;float: left;margin-top: 3rem;}
+.events-btn{padding-top:63rem;}
+.pics img{width:100%;}
+.pic1,.cover{width:100%;}
+.cover{float:left}
+.cover{position:relative;top:-14rem;left:0;display:none;}
+.pic-title{position:absolute; width:20rem;}
+.pic-title input {zoom: 2.6; float:left;}
+.pic-txt{font-size:1.5rem;}

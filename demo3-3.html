@@ -3,63 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>同期活动</title>
-    <link rel="stylesheet" href="demo3.css">
+    <link rel="stylesheet" href="dist/demo.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
-<style>
-    .pics {
-        width: 27rem;
-        height: 19rem;
-        position: relative;
-    }
 
-    .pic1 {
-        width: 27rem;
-        height: 19rem;
-        background: url("image/events1.png") no-repeat;
-        float: left;
-    }
-    .pic2{ width: 27rem;
-        height: 19rem;
-        background:url("image/events2.png") no-repeat;float:left;
-    }
-    .pic3{ width: 27rem;
-        height: 19rem;
-        background:url("image/events3.png") no-repeat;float:left;
-    }
-    .pic4{ width: 27rem;
-        height: 19rem;
-        background:url("image/events4.png") no-repeat;float:left;
-    }
-    .pic5{ width: 27rem;
-        height: 19rem;
-        background:url("image/events5.png") no-repeat;float:left;
-    }
-
-    .cover {
-        width: 27rem;
-        height: 19rem;
-        background: url("image/cover.png") no-repeat;
-        float: left;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: none;
-    }
-
-    .events-pic{
-    }
-    .events-boxes{
-        width:68rem;
-        overflow:hidden;
-    }
-</style>
 <body>
 <div class="events-all">
     <!--头部-->
     <div class="bar">
         <div class="icons"><a href=""><img src="image/icon.png" alt=""></a></div>
-        <div class="menu"><a href=""><img src="image/menu.png" alt=""></a></div>
+        <div class="menu" hidden><a href=""><img src="image/menus.png" alt=""></a></div>
         <div class="title">同期活动</div>
     </div>
     <!--内容-->
@@ -67,56 +20,64 @@
         <div class="events-boxes">
             <div class="events-pic p1">
                 <div class="pics">
-                    <div class="pic1"></div>
-                    <div class="cover"></div>
+                    <div class="pic1"><img src="image/events1.png" alt=""></div>
+                    <div class="cover"><img src="image/cover.png" alt=""></div>
                 </div>
-                <div>
-                    <input type="checkbox" id="ok1" checked onclick="showCover(this)" placeholder="">
-                    <span class="pic-txt">国家级别专业高峰论坛</span>
+                <div class="pic-title">
+                    <input type="checkbox" id="btn1" onclick="showCover(this)" placeholder="">
+                    <label for="btn1">
+                        <p class="pic-txt">国家级别专业高峰论坛</p>
+                    </label>
                 </div>
             </div>
             <div class="events-pic p2">
                 <div class="pics">
-                    <div class="pic2"></div>
-                    <div class="cover"></div>
+                    <div class="pic2"><img src="image/events2.png" alt=""></div>
+                    <div class="cover"><img src="image/cover.png" alt=""></div>
                 </div>
-                <div>
-                    <input type="checkbox" id="ok2" onclick="showCover(this)" placeholder="">
-                    <span class="pic-txt">聚焦类别专业赛事</span>
+                <div class="pic-title">
+                    <input type="checkbox" id="btn2" onclick="showCover(this)" placeholder="">
+                    <label for="btn2">
+                    <p class="pic-txt">聚焦类别专业赛事</p>
+                    </label>
                 </div>
             </div>
             <div class="events-pic p3">
                 <div class="pics">
-                    <div class="pic3"></div>
-                    <div class="cover"></div>
+                    <div class="pic3"><img src="image/events3.png" alt=""></div>
+                    <div class="cover"><img src="image/cover.png" alt=""></div>
                 </div>
-                <div>
-                    <input type="checkbox" id="ok3" onclick="showCover(this)" placeholder="">
-                    <span class="pic-txt">精准匹配商贸采配会</span>
+                <div class="pic-title">
+                    <input type="checkbox" id="btn3" onclick="showCover(this)" placeholder="">
+                        <label for="btn3">
+                            <p class="pic-txt">精准匹配商贸采配会</p>
+                    </label>
                 </div>
             </div>
             <div class="events-pic p4">
                 <div class="pics">
-                    <div class="pic4"></div>
-                    <div class="cover"></div>
+                    <div class="pic4"><img src="image/events4.png" alt=""></div>
+                    <div class="cover"><img src="image/cover.png" alt=""></div>
                 </div>
-                <div>
-                    <input type="checkbox" id="ok4" onclick="showCover(this)" placeholder="">
-                    <span class="pic-txt">引领发展主题推介会</span>
+                <div class="pic-title">
+                    <input type="checkbox" id="btn4" onclick="showCover(this)" placeholder="">
+                        <label for="btn4"><p class="pic-txt">引领发展主题推介会</p>
+                    </label>
                 </div>
             </div>
             <div class="events-pic p5">
                 <div class="pics">
-                    <div class="pic5"></div>
-                    <div class="cover"></div>
+                    <div class="pic5"><img src="image/events5.png" alt=""></div>
+                    <div class="cover"><img src="image/cover.png" alt=""></div>
                 </div>
-                <div>
-                    <input type="checkbox" id="ok5" onclick="showCover(this)" placeholder="">
-                    <span class="pic-txt">跨界盛宴创意时尚节</span>
+                <div class="pic-title">
+                    <input type="checkbox" id="btn5" onclick="showCover(this)" placeholder="">
+                        <label for="btn5"><p class="pic-txt">跨界盛宴创意时尚节</p>
+                    </label>
                 </div>
             </div>
         </div>
-        <div class="next-button">
+        <div class="next-button events-btn">
             <button type="submit" class="next">下一步</button>
         </div>
     </div>
